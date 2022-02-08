@@ -25,9 +25,10 @@ namespace ClassMetotDemo
             }
             
         }
-        public void Delete(Musteri[] musteriler)
+        public void Delete(Musteri[] musteriler,int Id)
         {
-            Console.WriteLine(musteriler+" Deleted!!");
+            musteriler = musteriler.Where((source, index) => index != (Id-1)).ToArray();
+            View(musteriler);
         }
     }
 }
