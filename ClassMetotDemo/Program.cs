@@ -10,10 +10,9 @@ namespace ClassMetotDemo
     {
         static void Main(string[] args)
         {
+            MusteriManager musteriManager = new MusteriManager();
             Musteri musteri1 = new Musteri();
-            musteri1.Id = 1;
-            musteri1.Ad = "Miko";
-            musteri1.Soyad = "Gurler";
+            musteriManager.Add(musteri1, 1, "Miko", "Gurler");
             Musteri musteri2 = new Musteri();
             musteri2.Id = 2;
             musteri2.Ad = "Selahittin";
@@ -23,11 +22,9 @@ namespace ClassMetotDemo
             musteri3.Ad = "İsmail";
             musteri3.Soyad = "Abi";
             Musteri [] musteriler=new Musteri[] { musteri1,musteri2,musteri3 };
-            MusteriManager musteriManager = new MusteriManager();
-            foreach (Musteri musteri in musteriler)
-            {
-                musteriManager.View(musteri);
-            }
+            
+            musteriManager.View(musteriler);
+            
             
             Console.Read();
         }

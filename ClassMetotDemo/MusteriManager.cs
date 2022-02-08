@@ -8,14 +8,22 @@ namespace ClassMetotDemo
 {
     class MusteriManager
     {
-        public void Add(Musteri[] musteriler)
+        public void Add(Musteri musteri,int musteriId,string musteriAd,string musteriSoyad)
         {
-            Console.WriteLine(musteriler+" Added!!");
+            musteri.Id = musteriId;
+            musteri.Ad = musteriAd;
+            musteri.Soyad = musteriSoyad;
+            Console.WriteLine(musteriAd+" "+musteriSoyad+" Added!!");
         }
 
-        public void View(Musteri [] musteriler)
+        public void View(Musteri[] musteriler)
         {
-            Console.WriteLine(musteriler);
+            foreach (Musteri m in musteriler)
+            { 
+                Console.WriteLine(m.Id+ "\n" + m.Ad+"\n"+m.Soyad);
+                Console.WriteLine("------------------");
+            }
+            
         }
         public void Delete(Musteri[] musteriler)
         {
