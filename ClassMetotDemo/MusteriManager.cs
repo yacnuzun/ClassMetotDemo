@@ -8,15 +8,17 @@ namespace ClassMetotDemo
 {
     class MusteriManager
     {
+        Musteri[] musteriler = new Musteri[] { };
         public void Add(Musteri musteri,int musteriId,string musteriAd,string musteriSoyad)
         {
             musteri.Id = musteriId;
             musteri.Ad = musteriAd;
             musteri.Soyad = musteriSoyad;
+            musteriler=musteriler.Append(musteri).ToArray();
             Console.WriteLine(musteriAd+" "+musteriSoyad+" Added!!");
         }
 
-        public void View(Musteri[] musteriler)
+        public void View()
         {
             foreach (Musteri m in musteriler)
             { 
@@ -25,10 +27,12 @@ namespace ClassMetotDemo
             }
             
         }
-        public void Delete(Musteri[] musteriler,int Id)
+        public void Delete(int Id)
         {
             musteriler = musteriler.Where((source, index) => index != (Id-1)).ToArray();
-            View(musteriler);
+
+            Console.WriteLine((Id) + "id'li müşteri kaldırılmıştır.");
+
         }
     }
 }

@@ -14,17 +14,14 @@ namespace ClassMetotDemo
             Musteri musteri1 = new Musteri();
             musteriManager.Add(musteri1, 1, "Miko", "Gurler");
             Musteri musteri2 = new Musteri();
-            musteri2.Id = 2;
-            musteri2.Ad = "Selahittin";
-            musteri2.Soyad = "Kısazade";
+            musteriManager.Add(musteri2,2,"Selahittin","Zorlu");
             Musteri musteri3 = new Musteri();
-            musteri3.Id = 3;
-            musteri3.Ad = "İsmail";
-            musteri3.Soyad = "Abi";
-            Musteri [] musteriler=new Musteri[] { musteri1,musteri2,musteri3 };
+            musteriManager.Add(musteri3,3,"İsmail","Abi");
             
-            musteriManager.View(musteriler);
-            musteriManager.Delete(musteriler,2);
+            
+            musteriManager.View();
+            musteriManager.Delete(2);
+            musteriManager.View();
             
             Console.Read();
         }
